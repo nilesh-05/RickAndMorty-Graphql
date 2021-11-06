@@ -1,8 +1,10 @@
 import React from "react";
+import { useParams } from "react-router";
 import { useCharacter } from "../hooks/useCharacter";
 
 export default function Character() {
-	const { data, error, loading } = useCharacter(2);
+	const { id } = useParams();
+	const { data, error, loading } = useCharacter(id);
 
 	console.log({ error, data, loading });
 
